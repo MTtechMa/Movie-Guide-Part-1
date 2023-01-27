@@ -1,11 +1,11 @@
 # Kristen Anderson
-# CIS261
-# Movie Guide Part 1
+# CIS 261
+# Week 4 Lab Movie Guide
 
 def display_menu():
-    print("The Movie List program")
+    print("---The Movie Guide Program---")
     print()
-    print("COMMAND MENU")
+    print("-COMMAND MENU-")
     print("list - List all movies")
     print("add  - Add a movie")
     print("del  - Delete a movie")
@@ -21,19 +21,24 @@ def add(movie_list):
     movie = input("Name: ")
     movie_list.append(movie)
     print(f"{movie} was added.\n")
-
+    return movie_list
+    print()
 def delete(movie_list):
     number = int(input("Number: "))
     if number < 1 or number > len(movie_list):
         print("Invalid movie number.\n")
+        return movie_list
+        print()
     else:
         movie = movie_list.pop(number-1)
         print(f"{movie} was deleted.\n")
+        return movie_list
+        print()
 
 def main():
-    movie_list = ["Monty Python and the Holy Grail",
-                  "On the Waterfront",
-                  "Cat on a Hot Tin Roof"]
+    movie_list = ["The Cat in the Hat",
+                  "Full Metal Jacket",
+                  "A Scanner Darkly"]
     
     display_menu()
 
@@ -48,10 +53,9 @@ def main():
         elif command.lower() == "exit":
             break
         else:
-            print("Not a valid command. Please try again.\n")
+            print("Invalid command. Please try again.\n")
 
-    print("Bye!")
+    print("Goodbye!")
 
 if __name__ == "__main__":
     main()
-
